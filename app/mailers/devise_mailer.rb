@@ -3,9 +3,10 @@ class DeviseMailer < Devise::Mailer
     include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
     default template_path: 'devise/mailer' # to make sure that your mailer uses the devise views
 
-    after_create :send_welcome_mail
+   default_from: "admin@paralegal.com"
 
-def send_welcome_mail
-   Contact.welcome_email(self.email, self.name).deliver
+   def confirmation(user)
+     @user = user
+     mail(to: @user.email, subject: "Welcome to the Paralegal Site!")
 end
 end

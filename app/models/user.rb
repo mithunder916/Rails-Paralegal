@@ -3,5 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         has_many :buyers   
+         has_many :buyers
+
+  after_create :send_welcome_mail
+
+ def send_welcome_mail
+    User.confirmation(self.email).deliver
+  end
 end
