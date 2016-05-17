@@ -21,9 +21,11 @@ class BuyersController < ApplicationController
 
   def update
     @buyer = Buyer.find(params[:id])
+    @user = User.find(params[:id])
     respond_to do |format|
       if @buyer.update(buyer_params)
         format.html {redirect_to @buyer, notice: "Client info has been updated"}
+        FormMailer.completed_form(@user,@buyer).deliver
       else
         format.html {render :edit}
       end
