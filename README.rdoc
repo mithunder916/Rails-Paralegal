@@ -1,28 +1,7 @@
-== README
+A Rails application that facilitates partially automated completed of housing title record forms in Wake County, North Carolina.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app draws from public housing and tax databases to automatically populate tax and housing value information from a single query. This eliminates the need for tedious back-and-forth manual database searching, typically the job of real estate paralegals. With this app, a real estate lawyer can bypass the most time-consuming part of the paperwork.
 
-Things you may want to cover:
+The app also integrates all other aspects of the form, such as client information, mortgages, liens, etc., and features a mailer that will automatically email the completed form to a specified address.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+built 2016 by Lukas Barry, Brian McDonald, Annette Myers, Mithun Selvaratnam.
